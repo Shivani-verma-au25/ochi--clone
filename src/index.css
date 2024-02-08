@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: nmreal;
+    src: url(./components/NeueMontreal-Regular.ttf);
+}
+@font-face {
+    font-family: fsm;
+    src: url(./components/FoundersGrotesk-Semibold.ttf);
+}
+.btn{
+    background-color: transparent;
+    border:.1vw solid #dadada;
+}
+
+.arrow{
+    width: 3vw;
+    height: 6vh;
+    background-color: transparent;
+    border:.1vw solid #dadada;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5vw;
+}
+.start:hover .btn, .start:hover .arrow{
+    color: #1f1e1e;
+    background-color: #dadada;
+    transition: all ease-in-out .3s;
+}
