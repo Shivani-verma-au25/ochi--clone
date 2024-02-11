@@ -1,15 +1,18 @@
+import { motion } from 'framer-motion';
 import React from 'react'
 import { MdOutlineArrowOutward } from "react-icons/md";
 
 
 function LandingPage() {
   return (
-    <div className='w-full h-screen bg-zinc-900 pt-1'>
+    <div data-scroll data-scroll-speed="-.3" className='w-full h-screen bg-zinc-900 pt-1'>
         <div className="textstructre mt-40 px-20">
             {["WE Create","eye-opening","presentation"].map((item,index)=> {
                 return <div key={index} className="maskers">
-                    <div key={index} className='w-full flex item-center overflow-hidden bg-red-500'>
-                        {index === 1 && (<div className='w-[9vw] h-[5.6vw] mt-3 bg-cyan-100 rounded-md mr-4'></div>)}
+                    <div  key={index} className='w-full flex item-center overflow-hidden'>
+                        {index === 1 && (<motion.div initial={{width:0}} animate={{width:"10vw"}} transition={{ease:[0.76, 0, 0.24, 1],duration:1}} className='w-[9vw] h-[5.6vw] mt-3  overflow-hidden mr-4'>
+                            <img className='rounded-xl w-full h-full bg-cover bg-center' src="https://ochi.design/wp-content/uploads/2022/04/content-image01.jpg" alt="" />
+                        </motion.div>)}
                         <h1 className='font-[fsm] uppercase leading-[6vw] font-semibold text-9xl' >{item}</h1>
                     </div>
                 </div>
