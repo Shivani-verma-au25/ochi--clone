@@ -5,7 +5,7 @@ import { MdOutlineArrowOutward } from "react-icons/md";
 
 function LandingPage() {
   return (
-    <div data-scroll data-scroll-speed="-.3" className='w-full h-screen bg-zinc-900 pt-1'>
+    <div data-scroll data-scroll-speed=".3" className='w-full h-screen bg-zinc-900 pt-1'>
         <div className="textstructre mt-40 px-20">
             {["WE Create","eye-opening","presentation"].map((item,index)=> {
                 return <div key={index} className="maskers">

@@ -1,10 +1,16 @@
-import { motion } from 'framer-motion'
+import { motion, useAnimation } from 'framer-motion'
 import React, { useState } from 'react'
 import { Power4 } from 'gsap/src/all'
 
 
 function Featured() {
-  const [ishovering,setisHovering] = useState(false)
+  const cards =[useAnimation(),useAnimation()]
+
+  const handleHover = (index) =>{
+    cards[index].start({
+      y:0
+    })
+  } 
   
   return (
     <div className='w-full py-10'>
@@ -17,25 +23,30 @@ function Featured() {
         </div>
         <div className='px-20'>
         <div  className=" cards w-full flex items-center justify-center gap-10  ">
-            <div  className='relative card-container w-1/2 h-[70vh]  '>
-              <h1 className='absolute flex left-full overflow-hidden -translate-x-1/2 top-1/2 -translate-y-1/2 z-50 text-[9vw] font-[fsm] leading-none tracking-tighter text-[#cdea68] '>
-              {"FYDE".split("").map((item,index) => (
-              <span className="inline-block" key={index} >{item}
-                </span>
-              ))}
-              
-              </h1>
+            <motion.div  onHoverStart={ () => handleHover(0)}  className='relative card-container w-1/2 h-[70vh]'>
+              <div className='absolute flex left-full  -translate-x-1/2 top-1/2 -translate-y-1/2 z-50 text-[9vw] font-[fsm] leading-none tracking-tighter text-[#cdea68] '>
+                  <h1 className='absolute flex left-full  -translate-x-1/2 top-1/2 -translate-y-1/2 z-50 text-[9vw] font-[fsm] leading-none tracking-tighter text-[#cdea68] '>
+                  {"FYDE".split("").map((item,index) => (
+                    <motion.span initial={{y:"100%"}} animate={cards[0]} className="inline-block" key={index} >{item}
+                    </motion.span>
+                  ))}
+                  </h1>
+              </div>
  
               <div className="card w-full h-full rounded-xl overflow-hidden" >
                   <img className='w-full h-full bg-cover' src="https://ochi.design/wp-content/uploads/2023/10/Fyde_Illustration_Crypto_2-663x551.png" alt="" /> 
               </div>   
-            </div>
+            </motion.div>
+
             <div className='relative card-container w-1/2 h-[70vh] '>
-            <h1 className='absolute flex right-full overflow-hidden translate-x-1/2 top-1/2 -translate-y-1/2 z-50 text-[9vw] font-[fsm] leading-none tracking-tighter text-[#cdea68] '>
-              {"vise".split("").map((item,index) => (<span 
-                className="inline-block"
-                key={index}>{item}</span>))}
-            </h1>
+              <div className='absolute flex right-full -translate-x-1/2 top-[30%] -left-[10%] -translate-y-1/2 z-50   leading-none tracking-tighter text-[#cdea68] '>
+
+                <h1 className='absolute flex   text-[11vw] font-[fsm] leading-none tracking-tighter text-[#cdea68] '>
+                  {"vise".split("").map((item,index) => (<span 
+                    className="inline-block"
+                    key={index}>{}</span>))}
+                </h1>
+              </div>
               <div className="card w-full h-full rounded-xl overflow-hidden" > 
                 <img className='w-full h-full bg-cover' src="https://ochi.design/wp-content/uploads/2022/09/Vise_front2-663x551.jpg" alt="" />
               </div>   
